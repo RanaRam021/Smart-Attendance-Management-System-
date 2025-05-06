@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            flex-direction: column;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 50px;
+            font-size: 45px;
+            color: #333;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #0056b3;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            width: 90%;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Attendance Manager</h1>
+
+    <div class="nav-links">
+        <a href="#">Student</a>
+        <a href="/loginpage">Admin</a>
+    </div>
+
+    <div class="container">
+        <h3>Check Attendance</h3>
+        <input type="text" id="rollno" placeholder="Enter Roll Number">
+        <button onclick="fetchAttendance()">Get Info</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function fetchAttendance() {
+            const rollno = document.getElementById('rollno').value;
+            if (!rollno) {
+                document.getElementById('output').innerText = "Please enter a roll number.";
+                return;
+            }
+
+            fetch(`/get_attendance?rollno=${rollno}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('output').innerText = data.error;
+                    } else {
+                        document.getElementById('output').innerHTML = `
+                            <strong>Name:</strong> ${data.name} <br>
+                            <strong>Roll Number:</strong> ${data.roll_no} <br>
+                            <strong>Weekly Total Attendance:</strong> ${data.weekly_total_attendance} <br>
+                            <strong>Weekly Total Percentage:</strong> ${data.weekly_total_percentage} <br>
+                            <strong>Cumulative Total Attendance:</strong> ${data.cumulative_total_attendance} <br>
+                            <strong>Cumulative Total Percentage:</strong> ${data.cumulative_total_percentage} <br>
+                            <strong>Last Attendance Time:</strong> ${data.last_attendance_time}
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('output').innerText = "An error occurred.";
+                    console.error(error);
+                });
+        }
+    </script>
+</body>
+</html>

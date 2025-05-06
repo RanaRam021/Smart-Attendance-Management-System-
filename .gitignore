@@ -1,0 +1,23 @@
+# Ignore virtual environment
+venv/
+
+# Ignore dataset images and image formats
+Images/
+*.jpg
+*.jpeg
+*.png
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment variable files
+.env
+
+# Ignore Firebase service account credentials
+serviceAccountKey.json
+
+# Ignore YOLO model weights
+yolov8n.pt
