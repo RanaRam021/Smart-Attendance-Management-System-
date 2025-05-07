@@ -34,7 +34,7 @@ The goal of this project is to automate the traditional attendance system using 
 
 ---
 
-- ## 🧪 Sample Usage
+## 🧪 Sample Usage
 
 - When `main.py` runs, it accesses the webcam, identifies students' faces in real-time using YOLOv8 and face recognition, and records attendance by marking them present in the Firebase Realtime Database.
 
