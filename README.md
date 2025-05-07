@@ -10,6 +10,25 @@ The goal of this project is to automate the traditional attendance system using 
 
 ---
 
+## 📁 File Structure Overview 
+- smart-attendance-system/
+  - ├── Images/                    # Folder for student images (not included)
+  - ├── templates/
+  - │   ├── index.html             # Homepage
+  - │   ├── login.html             # Admin login page
+  - │   └── admin.html             # Admin dashboard
+  - ├── EncodeGenerator.py         # Generates face encodings
+  - ├── main.py                    # Runs real-time face recognition
+  - ├── app.py                     # Flask web server
+  - ├── AddDatatoDatabase.py       # Script to add student data to Firebase
+  - ├── requirements.txt           # Python dependencies
+  - ├── serviceAccountKey.json     # Firebase credentials 
+  - ├── .env                       # Firebase database URL (NOT shared)
+  - ├── yolov8n.pt                 # YOLOv8 model weights
+  - └── .gitignore                 # Files and folders to ignore in Git
+
+---
+
 ## 🚀 Features
 
 - Real-time face recognition for attendance marking.
