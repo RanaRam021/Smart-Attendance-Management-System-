@@ -53,41 +53,41 @@ The goal of this project is to automate the traditional attendance system using 
 
 ## ✅ How to Run the Project
 
-### 1. Clone the repository
-``bash
-git clone https://github.com/your-username/smart-attendance-system.git
-cd smart-attendance-system 
+1. Clone the repository
+   ```bash
+    git clone https://github.com/your-username/smart-attendance-system.git
+    cd smart-attendance-system 
 
-### 2. Create and activate virtual environment
-``bash
-python -m venv venv
-venv\Scripts\activate   # On Windows
+2. Create and activate virtual environment
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate   # On Windows
 # OR
-source venv/bin/activate # On macOS/Linux
+    source venv/bin/activate # On macOS/Linux
 
-### 3. Install dependencies
-``bash
-pip install -r requirements.txt
+3. Install dependencies
+    ```bash
+    pip install -r requirements.txt
 
-### 4. Setup Firebase
+4. Setup Firebase
 - Create a Firebase project.
 - Download serviceAccountKey.json and save it in the project root.
 - Create a .env file and add:
-``bash
-FIREBASE_DB_URL=your_firebase_realtime_database_url
+    ```bash
+    FIREBASE_DB_URL=your_firebase_realtime_database_url
 
-### 5. Generate encodings
+5. Generate encodings
 - Make sure student images are placed in the Images/ folder.
-```bash
-python EncodeGenerator.py
+    ```bash
+    python EncodeGenerator.py
 
-### 6. Start face recognition system
-```bash
-python main.py
+6. Start face recognition system
+    ```bash
+    python main.py
 
-### 6. Run Flask web app
-```bash
-python app.py
+7. Run Flask web app
+    ```bash
+    python app.py
 
 ---
 
