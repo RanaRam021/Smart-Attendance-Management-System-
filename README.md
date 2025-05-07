@@ -55,8 +55,8 @@ The goal of this project is to automate the traditional attendance system using 
 
 1. Clone the repository
    ```bash
-    git clone https://github.com/your-username/smart-attendance-system.git
-    cd smart-attendance-system 
+    git clone https://github.com/RanaRam021/Smart-Attendance-Management-System.git
+    cd Smart-Attendance-Management-System
 
 2. Create and activate virtual environment
     ```bash
