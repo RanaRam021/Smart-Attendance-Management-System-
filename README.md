@@ -78,15 +78,15 @@ FIREBASE_DB_URL=your_firebase_realtime_database_url
 
 ### 5. Generate encodings
 - Make sure student images are placed in the Images/ folder.
-``bash
+```bash
 python EncodeGenerator.py
 
 ### 6. Start face recognition system
-``bash
+```bash
 python main.py
 
 ### 6. Run Flask web app
-``bash
+```bash
 python app.py
 
 ---
