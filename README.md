@@ -62,7 +62,8 @@ The goal of this project is to automate the traditional attendance system using 
     ```bash
     python -m venv venv
     venv\Scripts\activate   # On Windows
-- OR
+    
+    --- OR ---
     source venv/bin/activate # On macOS/Linux
 
 3. Install dependencies
